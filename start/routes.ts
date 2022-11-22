@@ -23,3 +23,9 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+
+
+// ROTAS DE LOGIN
+
+Route.post('sessions/parking', "SessionsController.login")
