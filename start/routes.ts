@@ -28,4 +28,4 @@ Route.get('/', async () => {
 
 // ROTAS DE LOGIN
 
-Route.post('sessions/parking', "SessionsController.login")
+Route.post('sessions/parking', "SessionsController.loginParking")
