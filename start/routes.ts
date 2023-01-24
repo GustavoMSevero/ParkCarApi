@@ -29,3 +29,4 @@ Route.get('/', async () => {
 // ROTAS DE LOGIN
 
 Route.post('sessions/parking', "SessionsController.loginParking")
+Route.resource('ownerParking', "OwnerParkingsController")
