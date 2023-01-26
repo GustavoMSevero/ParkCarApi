@@ -55,4 +55,8 @@ export default class Parking extends BaseModel {
 
   // @column.dateTime({ autoCreate: true, autoUpdate: true })
   // public updatedAt: DateTime
+
+  static get table() {
+    return 'parking'
+  }
 }
