@@ -2,7 +2,7 @@
 import { BaseModel, column, } from '@ioc:Adonis/Lucid/Orm'
 
 export default class OwnerParking extends BaseModel {
-  @column({ isPrimary: true })
+  @column({ isPrimary: true, columnName: "idOwnerParking" })
   public idOwnerParking: number
 
   @column({ columnName: 'ownerName' })
