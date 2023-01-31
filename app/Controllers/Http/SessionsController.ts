@@ -16,11 +16,9 @@ export default class SessionsController {
 
     // const user = await Database.rawQuery("SELECT op.idOwnerParking, op.ownerName, p.parkingName, p.idParking, op.ownerEmail FROM ownerParking op, parking p WHERE op.ownerEmail=? AND op.ownerPassword=? AND p.idOwnerParking = op.idOwnerParking", [email, hashedPassword])
 
-    const user = await OwnerParking.query().where('ownerEmail', email).andWhere('ownerPassword', hashedPassword)
+    const user = await OwnerParking.query().where('ownerEmail', email).andWhere('ownerPassword', hashedPassword).first()
 
-    console.log(user.length)
-
-    if (!user.length) {
+    if (!user) {
       return response.status(404).json({
         message: 'user not found',
         error: true
@@ -28,7 +26,7 @@ export default class SessionsController {
     }
 
     return response.send({
-      token: await this.jwt.generate(user[0][0]),
+      token: await this.jwt.generate({ id: user.idOwnerParking }),
       user
     })
   }
