@@ -4,7 +4,9 @@ import { generateMD5 } from 'App/Utils/functions'
 import CreateParkingValidator from 'App/Validators/CreateParkingValidator'
 
 export default class ParkingsController {
-  public async index({ }: HttpContextContract) { }
+  public async index({ }: HttpContextContract) {
+    return Parking.all()
+   }
 
   public async store({ request, response }: HttpContextContract) {
     const data = await request.validate(CreateParkingValidator)
