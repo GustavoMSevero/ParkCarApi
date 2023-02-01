@@ -7,6 +7,13 @@ import { generateMD5 } from 'App/Utils/functions'
 import CreateOwnerParkingValidator from 'App/Validators/CreateOwnerParkingValidator'
 
 export default class OwnerParkingsController {
+  public async show({ request, response, params }: HttpContextContract) {
+    const ownerParking = await OwnerParking.query().where('idOwnerParking', params.id).preload('parkings')
+
+    if (!ownerParking.length) response.badRequest('Owner Parking Not Found')
+    return ownerParking
+  }
+
   public async store({ request, response }: HttpContextContract) {
     const data = await request.validate(CreateOwnerParkingValidator)
 
