@@ -8,9 +8,9 @@ import CreateOwnerParkingValidator from 'App/Validators/CreateOwnerParkingValida
 
 export default class OwnerParkingsController {
   public async show({ request, response, params }: HttpContextContract) {
-    const ownerParking = await OwnerParking.query().where('idOwnerParking', params.id).preload('parkings')
+    const ownerParking = await OwnerParking.query().where('idOwnerParking', params.id).preload('parkings').first()
 
-    if (!ownerParking.length) response.badRequest('Owner Parking Not Found')
+    if (!ownerParking) response.badRequest('Owner Parking Not Found')
     return ownerParking
   }
 
