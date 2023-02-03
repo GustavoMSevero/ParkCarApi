@@ -5,7 +5,7 @@ export default class Parking extends BaseModel {
   @column({ isPrimary: true })
   public idParking: number
 
-  @column()
+  @column({ columnName: 'idOwnerParking'})
   public idOwnerParking?: number
 
   @column()
@@ -20,7 +20,7 @@ export default class Parking extends BaseModel {
   @column()
   public address: string
 
-  @column()
+  @column({ columnName: 'addressNumber'})
   public addressNumber: number
 
   @column()
@@ -32,13 +32,13 @@ export default class Parking extends BaseModel {
   @column()
   public state: string
 
-  @column()
+  @column({ columnName: 'parkingName'})
   public parkingName: string
 
-  @column()
+  @column({ columnName: 'parkinPass'})
   public parkinPass?: number
 
-  @column()
+  @column({ columnName: 'vaccantNumber'})
   public vaccantNumber: string
 
   @column()
