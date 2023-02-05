@@ -31,3 +31,5 @@ Route.get('/', async () => {
 Route.post('sessions/parking', "SessionsController.loginParking")
 Route.resource('ownerParking', "OwnerParkingsController")
 Route.resource('parking', "ParkingsController")
+Route.resource('parkingCustomers', "ParkingCustomersController")
+Route.resource('customerContracts', "CustomerContractsController")
