@@ -4,8 +4,8 @@ export default class CustomerContract extends BaseModel {
   @column({ isPrimary: true, columnName: 'idCustomerContract' })
   public idCustomerContract: number
 
-  @column({ columnName: "idParking" })
-  public idParking: number
+  @column({ columnName: "idOwnerParking" })
+  public idOwnerParking: number
 
   @column({ columnName: "contractType" })
   public contractType: string
