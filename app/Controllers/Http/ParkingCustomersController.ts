@@ -18,7 +18,7 @@ export default class ParkingCustomersController {
   }
 
   public async show({ params }: HttpContextContract) {
-    return ParkingCustomer.find(params.id)
+    return ParkingCustomer.findBy('idParking', params.id)
   }
 
   public async edit({ }: HttpContextContract) { }
