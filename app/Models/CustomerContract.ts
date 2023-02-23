@@ -13,10 +13,8 @@ export default class CustomerContract extends BaseModel {
   // @column.dateTime({ autoCreate: true })
   // public createdAt: DateTime
 
-  // @column.dateTime({ autoCreate: true, autoUpdate: true })
+  // @column.dateTime({ autoCreate: true, autoUpdateclear: true })
   // public updatedAt: DateTime
 
-  static get table() {
-    return 'customerContract'
-  }
+  public static table = 'customerContract'
 }
